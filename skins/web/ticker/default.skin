@@ -1,0 +1,9 @@
+<div class="{"ticker"|Tc}" data-ds="{$ZU_feature.parameter.ds}" data-connectors="{$ZU_feature.parameter.connectors}">
+Ticker: <span class="content"></span>
+{literal}
+    <script class="moustache" name="ticker" type="text/x-handlebars-template">
+        <a  href="{{url}}">{{headline}}</a>
+    </script>
+{/literal}
+</div>
+

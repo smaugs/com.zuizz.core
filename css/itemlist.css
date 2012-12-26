@@ -1,0 +1,68 @@
+div.modItemlist{
+    position:relative;
+}
+
+div.modItemlist input{
+    width: 80%;
+
+}
+div.modItemlist .scope {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+div.modItemlist .list{
+    overflow:auto;
+    height: 200px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+
+div.modItemlist .list > div{
+   border: 1px solid #ffffff;
+   border-bottom: 1px solid #d3d3d3;
+   cursor: pointer;
+}
+
+div.modItemlist .list > div.highlighted{
+   border: 1px solid #EAEAEA;
+    background-color: #EAEAEA;
+   border-radius: 4px;
+}
+
+div.modItemlist .list > div.selected{
+   border: 1px solid #d3d3d3;
+    background-color: #deedff;
+}
+div.modItemlist .list > div.selected:hover{
+    background-color: #F9F9F9;
+}
+
+div.modItemlist .token{
+
+    height: 100px;
+    overflow: auto;
+}
+div.modItemlist .token button{
+    margin-bottom: 5px;
+}
+
+div.modItemlist .order{
+    position:absolute;
+    bottom: 0px;
+    margin: 0;
+}
+div.modItemlist .cancel {
+
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+    color: black;
+    text-shadow: 0 1px 0 white;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
