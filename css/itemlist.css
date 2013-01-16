@@ -14,6 +14,7 @@ div.modItemlist .scope {
 
 div.modItemlist .list{
     overflow:auto;
+    -webkit-overflow-scrolling: touch;
     height: 200px;
     padding-bottom: 5px;
     border-bottom: 1px solid #d3d3d3;
@@ -41,12 +42,12 @@ div.modItemlist .list > div.selected:hover{
 }
 
 div.modItemlist .token{
-
-    height: 100px;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 div.modItemlist .token button{
     margin-bottom: 5px;
+    margin-right: 4px;
 }
 
 div.modItemlist .order{

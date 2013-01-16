@@ -394,6 +394,7 @@
                     self.list.children().eq(self.highlight).addClass('selected');
                     if (self.options.tokenizer === true) {
                         self.addToken(self.highlight);
+
                     }
 
                     self.itemSelect(self.highlight);
