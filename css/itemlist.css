@@ -10,6 +10,7 @@ div.modItemlist .scope {
     margin: 5px 0;
     padding-bottom: 5px;
     border-bottom: 1px solid #d3d3d3;
+width:100%;
 }
 
 div.modItemlist .list{
@@ -30,7 +31,7 @@ div.modItemlist .list > div{
 div.modItemlist .list > div.highlighted{
    border: 1px solid #EAEAEA;
     background-color: #EAEAEA;
-   border-radius: 4px;
+
 }
 
 div.modItemlist .list > div.selected{
