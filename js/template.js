@@ -2,10 +2,10 @@
     /**
      * @author Veith Zäch
      * @namespace Tc.Module
-     * @class Template
+     * @class TcTemplate
      * @extends Tc.Module
      */
-    Tc.Module.Template = Tc.Module.extend({
+    Tc.Module.TcTemplate = Tc.Module.extend({
 
         /**
          * Initializes the Default module.
