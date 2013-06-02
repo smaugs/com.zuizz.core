@@ -1,0 +1,14 @@
+<div class="{"testbindings"|Tc}">
+    <h1>Test</h1>
+<div class="item"></div>
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="item">
+            <input type="text" class="tc-log tc-log-label ss" />
+            <span class="badge tc-log tc-log-message ss" data-bind-log="message" contenteditable="true"></span>
+            <button class="btn btn-danger">log</button>
+            <button class="btn btn-primary">change message</button>
+
+        </script>
+    {/literal}
+</div>
