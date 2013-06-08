@@ -81,6 +81,7 @@
             }
         },
         formatResult:function () {
+
         },
         itemSelect:function (index) {
             var $ctx = this.$ctx,
@@ -116,6 +117,10 @@
 
             var $ctx = this.$ctx,
                 self = this;
+            if(self.search.val() == ''){
+                initialQuery = true;
+            }
+
             if (self.search.val().length < self.options.query.minimumInputLength && !initialQuery) {
                 return;
             }
@@ -136,6 +141,7 @@
                         self.data = response[self.options.query.resultArray];
 
                         $.each(response[self.options.query.resultArray], function (i, record) {
+
                             self.list.append(self.formatResult(record));
                             // go to first result
                          if(!initialQuery){
@@ -596,11 +602,16 @@
             self.list.on("hover", 'div', function (e) {
                 self.setHighlight($(this).index());
             });
+
+            /*
             self.list.on("click", 'div', function (e) {
                 //self.search.focus();
+
                 self.setHighlight($(this).index());
                 self.selectHighlighted();
             });
+            */
+
             self.search.bind("keydown", function (e) {
                 if (e.which === self.KEY.PAGE_UP || e.which === self.KEY.PAGE_DOWN) {
                     // prevent the page from scrolling
