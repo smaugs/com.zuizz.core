@@ -2,15 +2,10 @@
 
 
 try {
-    $bp = ORM::for_table('axc_machines')->find_one($this->values['identifier']);
-    if ($bp) {
-        if($this->values['running'] != null ){
-           $bp->set('running',$this->values['running']);
-        }
-        if($this->values['destroyed'] != null ){
-           $bp->set('destroyed',$this->values['destroyed']);
-        }
-        $bp->save();
+    $logs = ORM::for_table('log')->find_one($this->values['identifier']);
+    if ($logs) {
+        $logs->set('label',$this->values['label']);
+        $logs->save();
     } else {
         throw new Exception('no object with id ' . $this->values['identifier']);
     }

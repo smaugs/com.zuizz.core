@@ -1,7 +1,7 @@
 <?php
 
 try {
-    ORM::configure('logging', true);
+
     $logs = ORM::for_table('log')->table_alias('l');
 
     $this->REST_scope($logs);

@@ -89,11 +89,11 @@
     }
 }, "permission": [
     {
-        "role": "User",
+        "role": "Public",
         "description": "Authentifizierte Benutzer k\u00f6nnen..."
     },
     {
-        "role": "Public",
+        "role": "Administrator",
         "description": "Rolle Administrator kann..."
     },
     {

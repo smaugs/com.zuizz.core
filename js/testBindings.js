@@ -22,15 +22,10 @@
 
             // call base constructor
             this._super($ctx, sandbox, modId);
-            self.connectResources();
-            self.initDot();
-
-        },
-
-        connectResources: function () {
-            var $ctx = this.$ctx,
-                self = this;
             self.logs = new Tc.zu.rest('/rest/com.zuizz.core.logs');
+            self.initDot();
+            self.autobutton();
+
         },
 
 
@@ -53,17 +48,30 @@
                 self = this;
             callback();
             $('button.btn-danger', $ctx).click(function () {
-                console.dir(self.logentry.attributes)
+                console.dir(self.logForm.attributes)
                 console.dir(self.logs.modified_attributes)
             });
 
-            $('button.btn-primary', $ctx).click(function () {
-                self.logentry.set('message','changed');
+            $('span', $ctx).blur(function () {
+                $(this).trigger('change')
             });
-
-            $('span',$ctx).blur(function(){ $(this).trigger('change') });
         },
 
+        'tcb-hide': function (e) {
+            var $ctx = this.$ctx,
+                self = this;
+            $(e).hide()
+        },
+        'tcb-alert': function (e) {
+            var $ctx = this.$ctx,
+                self = this;
+            alert(334)
+        },
+        'tcb-save': function (e) {
+            var $ctx = this.$ctx,
+                self = this;
+            self.logs.save()
+        },
         /**
          * Hook function to trigger your events.
          *
@@ -75,15 +83,25 @@
                 self = this;
             $('.item').html(self.dot.item())
             self.logs.get(156, {200: function (d) {
-                self.logentry = new Tc.zu.bind($ctx, 'log',d.data);
-                self.logentry.onChange = function(a,b){
-                    var d={};
-                    d[a] = b;
-                    self.logs.set(d)
+
+                self.logForm = new Tc.zu.bind($ctx, 'log', d.data);
+
+                self.logForm.fields.label.beforeChange = function (val) {
+                    $ctx.append('<hr>')
                 };
 
-                //self.logentry.data(d.data);
-                //self.logentry.set('key','value');
+                self.logForm.fields.label.onChange = function (val) {
+                    $ctx.append(val)
+                };
+                self.logForm.onChange = function (a, b, ev) {
+                    var d = {};
+                    d[a] = b;
+                    self.logs.set(d)
+                    console.dir(a)
+                };
+
+                //self.logForm.data(d.data);
+                //self.logForm.set('key','value');
             }})
         }
 
