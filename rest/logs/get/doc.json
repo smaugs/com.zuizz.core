@@ -1,0 +1,109 @@
+{"title": "Logfiles", "request": "com.zuizz.core.logs", "method": "GET", "description": "Logfiles", "parameter": {
+    "identifier": {
+        "description": "Identifier field",
+        "name": "identifier",
+        "type": "2",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
+    },
+    "q": {
+        "description": "Suchen",
+        "name": "q",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "limit": {
+        "description": "Anzahl der Elemente",
+        "name": "limit",
+        "type": "2",
+        "required": 0,
+        "default_value": "10",
+        "regularexpression": ""
+    },
+    "page": {
+        "description": "Seite",
+        "name": "page",
+        "type": 2,
+        "required": false,
+        "default_value": null,
+        "regularexpression": ""
+    },
+    "scope": {
+        "description": "running 0\/1 destroyed 0\/1",
+        "name": "scope",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    },
+    "order": {
+        "description": "Order by ",
+        "name": "order",
+        "regularexpression": "",
+        "default_value": null,
+        "type": "1",
+        "required": 0
+    },
+    "order_dir": {
+        "description": "asc or desc",
+        "name": "order_dir",
+        "regularexpression": "",
+        "default_value": "asc",
+        "type": "1",
+        "required": 0
+    },
+    "fields": {
+        "description": "Array with requested fieldnames",
+        "name": "fields",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    },
+    "context": {
+        "description": "Context",
+        "name": "context",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    }
+}, "states": {
+    "200": {
+        "code": 200,
+        "message": "OK",
+        "description": "Daten sind im Response Body"
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    },
+    "204": {
+        "description": "Request response have no content",
+        "code": "204",
+        "message": "No Content"
+    }
+}, "permission": [
+    {
+        "role": "Public",
+        "description": "Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    },
+    {
+        "role": "Developer",
+        "description": "Developer"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": ""
+    }
+}}

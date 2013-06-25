@@ -1,0 +1,39 @@
+{"title": "Machines", "request": "com.zuizz.core.logs", "method": "PUT", "description": "Modify Log", "parameter": {
+    "identifier": {
+        "description": "Identifier field",
+        "name": "identifier",
+        "type": "2",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
+    },
+    "label": {
+        "description": "label",
+        "name": "label",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    }
+}, "states": {
+    "202": {
+        "code": "202",
+        "message": "OK",
+        "description": "Daten sind im Response Body"
+    }
+}, "permission": [
+    {
+        "role": "Public",
+        "description": "Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": ""
+    }
+}}
