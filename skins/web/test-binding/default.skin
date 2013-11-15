@@ -1,14 +1,69 @@
-<div class="{"testbindings"|Tc}">
+<div class="{"testbindings"|Tc} well well-danger">
     <h1>Test</h1>
-<div class="item"></div>
+
+    <div class="item"></div>
 
     {literal}
         <script class="dot" type="text/text/x-dot-template" name="item">
-            <input type="text" class="tc-log tc-log-label" />
-            <span class="badge tc-log tc-log-message" contenteditable="true"></span>
-            <button class="btn btn-danger">log</button>
-            <button class="btn btn-primary tcb tcb-save">save</button>
 
+            <input type="text" class="tc-log tc-log-label col-xs-3"/>
+            <button class="btn btn-danger tcb tcb-log"><i class="icon-lock"></i> log</button>
+            <button class="btn btn-danger tcb tcb-log"><i class="icon-lock"></i> log</button>
+            <button class="btn btn-primary tcb tcb-save">saddd</button>
+            <button class="btn btn-primary tcb tcb-save">sadd</button>
+            <button class="btn btn-primary tcb tcb-save">sdddda</button>
+
+            <div class="badge tc-log tc-log-message" contenteditable="true">dd</div>
+
+
+            <select name="a" class="tc-log tc-log-cb col-md-12" id="">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+            </select>
+
+            <select name="a" class="tc-log tc-log-cbm col-md-12" multiple id="">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+            </select>
+
+
+            <label>
+                <input type="checkbox" class="tc-log tc-log-chbox" value="option1">1
+            </label>
+            <label>
+                <input type="checkbox" class="tc-log tc-log-chbox" value="option2"> 2
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="tc-log tc-log-chbox" value="option3"> 3
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="tc-log tc-log-chbox" value="option34"> 34
+            </label>
+
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" class="tc-log tc-log-radio" value="option1" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" class="tc-log tc-log-radio" value="option222">
+                    Option two can be something else and selecting it will deselect option one
+                </label>
+                <label>
+                    <input type="radio" name="optionsRadios" class="tc-log tc-log-radio" value="option333">
+                    Option two can be something else and selecting it will deselect option one
+                </label>
+            </div>
+
+            <br>
+            <span class="tc-log tc-log-message"></span>
+        </form>
         </script>
     {/literal}
 </div>

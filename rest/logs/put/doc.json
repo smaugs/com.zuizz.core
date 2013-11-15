@@ -2,7 +2,7 @@
     "identifier": {
         "description": "Identifier field",
         "name": "identifier",
-        "type": "2",
+        "type": "1",
         "required": 0,
         "default_value": "",
         "regularexpression": ""

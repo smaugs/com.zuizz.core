@@ -1,4 +1,6 @@
 <?php
+/** @var $this ZUFEATURE */
+/** @var $REST ZUREST */
 
 try {
 

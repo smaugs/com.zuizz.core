@@ -1,26 +1,35 @@
 <?php
+/** @var $this ZUFEATURE */
+/** @var $REST ZUREST */
+
+$REST = &$this->rest;
 
 $this->values['identifier'];
 $this->values['q'];
 $this->values['limit'];
 $this->values['page'];
 $this->values['scope'];
-$this->values['order'];
-$this->values['order_dir'];
+
 $this->values['fields'];
 
 
 $this->fields = array(
-    'id' => array('int','l.id'),
+    'id' => array('int','l.id','id'),
     'feature_type' => array("int",'l.feature_type'),
     'feature_id' => array("int",'l.feature_id'),
     'c_date' => array("int",'l.c_date'),
-    'c_user_id' => array("int",'l.c_user_id'),
+    'c_user_id' => array("int",'l.c_user_id','id'),
     'priority' => array("int",'l.priority'),
-    'label' => array("string",'l.label'),
     'message' => array("string",'l.message'),
+    'label' => array("string",'l.label'),
     'file' => array("string",'l.file'),
     'line' => array("string",'l.line'),
+);
+
+
+$this->expandfields['user'] = array(
+    'user_id' => array('int','u.user_id'),
+    'username' => array("string",'u.name')
 
 );
 

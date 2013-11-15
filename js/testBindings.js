@@ -22,7 +22,9 @@
 
             // call base constructor
             this._super($ctx, sandbox, modId);
-            self.logs = new Tc.zu.rest('/rest/com.zuizz.core.logs');
+            self.logs = new Tc.zu.rest('/rest/com.zuizz.core.logs/');
+
+
             self.initDot();
             self.autobutton();
 
@@ -47,16 +49,18 @@
             var $ctx = this.$ctx,
                 self = this;
             callback();
-            $('button.btn-danger', $ctx).click(function () {
-                console.dir(self.logForm.attributes)
-                console.dir(self.logs.modified_attributes)
-            });
+
 
             $('span', $ctx).blur(function () {
                 $(this).trigger('change')
             });
         },
-
+        'tcb-log': function (e) {
+            var $ctx = this.$ctx,
+                self = this;
+            console.dir(self.logForm)
+            console.dir(self.logs.modified_attributes)
+        },
         'tcb-hide': function (e) {
             var $ctx = this.$ctx,
                 self = this;
@@ -82,22 +86,47 @@
             var $ctx = this.$ctx,
                 self = this;
             $('.item').html(self.dot.item())
-            self.logs.get(156, {200: function (d) {
+            self.logs.get('vva', {200: function (d) {
 
                 self.logForm = new Tc.zu.bind($ctx, 'log', d.data);
 
                 self.logForm.fields.label.beforeChange = function (val) {
                     $ctx.append('<hr>')
                 };
+                self.logForm.onChangeAfterFields = function (a, b) {
 
-                self.logForm.fields.label.onChange = function (val) {
-                    $ctx.append(val)
                 };
-                self.logForm.onChange = function (a, b, ev) {
+               // self.logForm.debounceTreshhold = 0;
+                self.logForm.set('cb', 'c');
+                self.logForm.set('radio', 'option333');
+                self.logForm.set('chbox', ['option1', 'option3']);
+                self.logForm.set('cbm', ['a', 'd', 'b']);
+
+                self.logForm.fields['cb'] = {'onChange': function (key, val) {
+                    $ctx.append(key + ' --> ' + val)
+
+                }};
+
+                self.logForm.fields['label'] = {'onChange': function (key, val) {
+                    $('div.progress.progress-success > div.bar').css('width', val.length + '%');
+
+                }};
+
+                self.logForm.fields['chbox'] = {'onChange': function (key, val) {
+                    $('div.progress.deblau > div.bar').css('width', val.length*12 + '%');
+
+                }};
+
+                self.logForm.fields['cbm'] = {'onChange': function (key, val) {
+                    $ctx.append(key + ' --> ' + val)
+                    $('div.progress > div.bar-danger').css('width', val.length*10 + '%');
+                }};
+                self.logForm.onChange = function (a, b) {
                     var d = {};
                     d[a] = b;
                     self.logs.set(d)
-                    console.dir(a)
+
+
                 };
 
                 //self.logForm.data(d.data);

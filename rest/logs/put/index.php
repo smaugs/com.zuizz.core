@@ -1,13 +1,16 @@
-<?php 
-
+<?php
+/** @var $this ZUFEATURE */
+/** @var $REST ZUREST */
+$REST =& $this->rest;
+$id = $REST->decodeID($this->values['identifier']);
 
 try {
-    $logs = ORM::for_table('log')->find_one($this->values['identifier']);
+    $logs = ORM::for_table('log')->find_one($id);
     if ($logs) {
         $logs->set('label',$this->values['label']);
         $logs->save();
     } else {
-        throw new Exception('no object with id ' . $this->values['identifier']);
+        throw new Exception('no object with id ' . $id);
     }
     ZU::header(202);
 
