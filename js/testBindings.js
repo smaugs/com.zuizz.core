@@ -24,7 +24,6 @@
             this._super($ctx, sandbox, modId);
             self.logs = new Tc.zu.rest('/rest/com.zuizz.core.logs/');
 
-
             self.initDot();
             self.autobutton();
 
